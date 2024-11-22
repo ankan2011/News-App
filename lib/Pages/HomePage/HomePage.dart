@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
         title:  Text('Simple News',
           style: Theme.of(context).textTheme.headlineLarge,),
       ),
-      floatingActionButton: MyBottomNav(),
+
 
       body: Padding(
         padding: EdgeInsets.all(8),
