@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_newss/Compoment/NavigationBar.dart';
 import 'package:simple_newss/Pages/HomePage/Widgets/NewsTile.dart';
 import 'package:simple_newss/Pages/HomePage/Widgets/TrandingCard.dart';
 
@@ -18,6 +19,8 @@ class _HomePageState extends State<HomePage> {
         title:  Text('Simple News',
           style: Theme.of(context).textTheme.headlineLarge,),
       ),
+      floatingActionButton: MyBottomNav(),
+
       body: Padding(
         padding: EdgeInsets.all(8),
         child: SingleChildScrollView(
@@ -37,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
               const SizedBox(height: 20,),
-          
+
               const SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
@@ -54,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                     TrandingCard(
                       imageUrl: "https://feeds.abplive.com/onecms/images/uploaded-images/2024/"
                           "11/21/2730e04ea92760f9c8e8ec64a111968b1732164450053484_original.jpg?impolicy=abp_cdn&imwidth=720",
-          
+
                       title: "উত্তুরে হাওয়াতে মনোরম পরিবেশ, আজ কত তাপমাত্রা কলকাতায় ?",
                       tag: "Tranding No 2",
                       time: "1 days ago",
@@ -63,20 +66,20 @@ class _HomePageState extends State<HomePage> {
                     TrandingCard(
                       imageUrl: "https://bengali.abplive.com/photo-gallery/sports/cricket-border-ga"
                           "vaskar-trophy-india-vs-australia-perth-test-when-and-where-to-watch-match-know-in-pics-1106667",
-          
+
                       title: "ওপটাস স্টেডিয়ামে আগামীকাল থেকে শুরু ইন্দো-অজি দ্বৈরথ, কখন, কোথায় দেখবেন ম্য়াচ?",
                       tag: "Tranding No 3",
                       time: "1 days ago",
                       auther: "Auther Name",
                     ),
-          
-          
+
+
                   ],
                 ),
               ),
               SizedBox(height: 10,),
               Row(
-          
+
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -120,7 +123,7 @@ class _HomePageState extends State<HomePage> {
 
                 ],
               )
-          
+
             ],
           ),
         ),
