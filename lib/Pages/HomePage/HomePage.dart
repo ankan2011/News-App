@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:simple_newss/Compoment/NavigationBar.dart';
 import 'package:simple_newss/Pages/HomePage/Widgets/NewsTile.dart';
 import 'package:simple_newss/Pages/HomePage/Widgets/TrandingCard.dart';
+import 'package:simple_newss/Pages/NewsDetails/NewsDetails.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,17 +17,45 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title:  Text('Simple News',
-          style: Theme.of(context).textTheme.headlineLarge,),
-      ),
-
 
       body: Padding(
         padding: EdgeInsets.all(8),
         child: SingleChildScrollView(
           child: Column(
             children: [
+              SizedBox(height: 30,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child:Icon(Icons.dashboard),
+                  ),
+                  Text("SIMPLE NEWS",
+                    style: TextStyle(
+                      fontSize: 25,
+                      fontFamily: "Poppins",
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: 1.5,
+                    ),
+                  ),
+                  Container(
+                    width: 50,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    child:Icon(Icons.person),
+                  )
+                ],
+              ),
+              SizedBox(height: 20,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -41,11 +71,14 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20,),
 
-              const SingleChildScrollView(
+               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
                    TrandingCard(
+                     ontap: () {
+                       Get.to(NewsDetailsPage());
+                     },
                      imageUrl: "https://feeds.abplive.com/onecms/images/uploaded-"
                        "images/2024/10/31/77fa70c798c1f755d74738b5aba01344173034525337464_original"
                        ".jpg?impolicy=abp_cdn&imwidth=470",
@@ -55,6 +88,9 @@ class _HomePageState extends State<HomePage> {
                      auther: "Auther Name",
                    ),
                     TrandingCard(
+                      ontap: () {
+                        Get.to(NewsDetailsPage());
+                      },
                       imageUrl: "https://feeds.abplive.com/onecms/images/uploaded-images/2024/"
                           "11/21/2730e04ea92760f9c8e8ec64a111968b1732164450053484_original.jpg?impolicy=abp_cdn&imwidth=720",
 
@@ -64,6 +100,9 @@ class _HomePageState extends State<HomePage> {
                       auther: "Auther Name",
                     ),
                     TrandingCard(
+                      ontap: () {
+                        Get.to(NewsDetailsPage());
+                      },
                       imageUrl: "https://bengali.abplive.com/photo-gallery/sports/cricket-border-ga"
                           "vaskar-trophy-india-vs-australia-perth-test-when-and-where-to-watch-match-know-in-pics-1106667",
 
